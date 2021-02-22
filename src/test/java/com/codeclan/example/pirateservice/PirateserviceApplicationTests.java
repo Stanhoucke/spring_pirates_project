@@ -48,12 +48,17 @@ class PirateserviceApplicationTests {
 
 		Pirate pirate1 = new Pirate("Jack", "Sparrow", 32, ship);
 		pirateRepository.save(pirate1);
+		Pirate pirate2 = new Pirate("Hector", "Barbossa", 60, ship);
+		pirateRepository.save(pirate2);
 
 		Raid raid1 = new Raid("Tortuga", 100);
 		raidRepository.save(raid1);
 
 		raid1.addPirate(pirate1);
 		raidRepository.save(raid1);
+
+		pirate2.addRaid(raid1);
+		pirateRepository.save(pirate2);
 
 	}
 
